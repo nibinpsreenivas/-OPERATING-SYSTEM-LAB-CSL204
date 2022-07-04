@@ -5,7 +5,7 @@ int mutex = 1;
 void producer();
 int consumer();
 #define n 10
-int q[n],front = -1,rear =-1;
+int buffer[n],front = -1,rear =-1;
 int main()
 {
    int item,a,o;
@@ -60,7 +60,7 @@ int main()
      front = rear = 0;
    else
      rear = (rear+1)%n;
-   q[rear]=1;
+   buffer[rear]=1;
   printf("\nthe producer produces  %d",(rear+1));
   }
    mutex=1;
